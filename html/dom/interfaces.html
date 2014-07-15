@@ -1367,7 +1367,7 @@ interface TextTrackCue : EventTarget {
            attribute EventHandler onexit;
 };
 [Constructor(double startTime, double endTime, ArrayBuffer data)]
-   interface DataCue : TextTrackCue {
+interface DataCue : TextTrackCue {
                attribute ArrayBuffer data;
 };
 interface TimeRanges {
@@ -2107,7 +2107,7 @@ interface HTMLDialogElement : HTMLElement {
   getter object (DOMString name);
 
   // the user agent
-  readonly attribute Navigator navigator; 
+  readonly attribute Navigator navigator;
   [Replaceable] readonly attribute External external;
   readonly attribute ApplicationCache applicationCache;
 
@@ -2582,7 +2582,7 @@ interface HTMLAppletElement : HTMLElement {
            attribute DOMString height;
            attribute unsigned long hspace;
            attribute DOMString name;
-           attribute DOMString _object; // the underscore is not part of the identifier 
+           attribute DOMString _object; // the underscore is not part of the identifier
            attribute unsigned long vspace;
            attribute DOMString width;
 };
@@ -2993,6 +2993,7 @@ window.onload = function() {
 			'document.createElement("ins")',
 			'document.createElement("del")',
 		],
+    HTMLPictureElement: ['document.createElement("picture")'],
 		HTMLImageElement: ['document.createElement("img")', 'new Image()'],
 		HTMLIframeElement: ['document.createElement("iframe")'],
 		HTMLEmbedElement: ['document.createElement("embed")'],
@@ -3013,6 +3014,7 @@ window.onload = function() {
 		TextTrack: ['document.createElement("track").track'],
 		TextTrackCueList: ['document.createElement("video").addTextTrack("subtitles").cues'],
 		TextTrackCue: [],
+    DataCue: [],
 		TimeRanges: ['document.createElement("video").buffered'],
 		TrackEvent: ['new TrackEvent("addtrack"; {track:document.createElement("track").track})'],
 		HTMLCanvasElement: ['document.createElement("canvas")'],
